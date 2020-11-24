@@ -18,21 +18,21 @@ const cards = {
         displayName: "Visa",
         lengths: [16],
         cvvLength: 3,
-        defaultImageUrl: "/images/tru/svg/visa.svg",
+        imageUrl: "./assets/visa.svg",
     },
     MasterCard: {
         code: "MasterCard",
         displayName: "MasterCard",
         lengths: [16],
         cvvLength: 3,
-        defaultImageUrl: "/images/tru/svg/mastercard.svg",
+        imageUrl: "./assets/mastercard.svg",
     },
     Amex: {
         code: "Amex",
         displayName: "American Express",
         lengths: [15],
         cvvLength: 4,
-        defaultImageUrl: "/images/tru/svg/amex.svg",
+        imageUrl: "./assets/amex.svg",
     },
 };
 
@@ -105,9 +105,9 @@ const getCardByType = (cardType) => (cardType ? cards[cardType] : null);
  * @param {String} cardType
  * @returns
  */
-const getCardDefaultImageByDetails = (cardType) => {
+const getCardImageByCardType = (cardType) => {
     if (cardType && cards[cardType]) {
-        return cards[cardType].defaultImageUrl;
+        return cards[cardType].imageUrl;
     }
     return "";
 };
@@ -164,7 +164,7 @@ export {
     getCardByNumber,
     isValidCard,
     getCardByType,
-    getCardDefaultImageByDetails,
+    getCardImageByCardType,
     isValidCardLength,
     formatCardNumber,
 };
