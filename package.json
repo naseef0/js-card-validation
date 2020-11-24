@@ -1,0 +1,25 @@
+{
+  "name": "js-card-validation",
+  "version": "1.0.0",
+  "description": "This package is used to validate payment cards",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naseef0/js-card-validation.git"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "express",
+    "npm"
+  ],
+  "author": "Naseef O",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naseef0/js-card-validation/issues"
+  },
+  "homepage": "https://github.com/naseef0/js-card-validation#readme"
+}
