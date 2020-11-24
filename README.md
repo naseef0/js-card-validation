@@ -1,2 +1,2 @@
-# moz-card-validation
-Payment card validation 
+# js-card-validation
+Payment card validation using javascript
