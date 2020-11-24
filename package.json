@@ -4,7 +4,8 @@
   "description": "This package is used to validate payment cards",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,18 @@
   ],
   "author": "Naseef O",
   "license": "MIT",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/naseef0/js-card-validation/issues"
   },
-  "homepage": "https://github.com/naseef0/js-card-validation#readme"
+  "homepage": "https://github.com/naseef0/js-card-validation#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.8",
+    "@babel/preset-env": "^7.12.7"
+  }
 }
