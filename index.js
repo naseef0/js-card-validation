@@ -1,18 +1,16 @@
 /**
- *
+ * 
  * Card Validation Library
  *
  * @author Naseef O
  *
  */
 
-
-
 /**
 * Cards details
 * Todo -> add other cards
 */
-const cards = {
+const cardDetails = {
     Visa: {
         code: "Visa",
         displayName: "Visa",
@@ -86,9 +84,9 @@ const identifyCardType = (cardNumber) => {
  * @param {String} cardNumber
  * @returns
  */
-const getCardByNumber = (cardNumber) => {
+const getCardNumberDetails = (cardNumber) => {
     const cardType = identifyCardType(cardNumber);
-    return cardType ? cards[cardType] : null;
+    return cardType ? cardDetails[cardType] : null;
 };
 
 /**
@@ -97,7 +95,7 @@ const getCardByNumber = (cardNumber) => {
  * @param {String} cardNumber
  * @returns
  */
-const getCardByType = (cardType) => (cardType ? cards[cardType] : null);
+const getCardDetailsByDetails = (cardType) => (cardType ? cardDetails[cardType] : null);
 
 /**
  * This method is used to get card default image
@@ -105,9 +103,9 @@ const getCardByType = (cardType) => (cardType ? cards[cardType] : null);
  * @param {String} cardType
  * @returns
  */
-const getCardImageByCardType = (cardType) => {
-    if (cardType && cards[cardType]) {
-        return cards[cardType].imageUrl;
+const getCardDefaultImageByDetails = (cardType) => {
+    if (cardType && cardDetails[cardType]) {
+        return cardDetails[cardType].defaultImageUrl;
     }
     return "";
 };
@@ -119,8 +117,8 @@ const getCardImageByCardType = (cardType) => {
  * @param {String} type
  * @returns
  */
-const isValidCard = (cardNumber, type) => cards[type]
-    && cards[type].lengths.includes(cardNumber.length);
+const isValidCardNumber = (cardNumber, type) => cardDetails[type]
+    && cardDetails[type].lengths.includes(cardNumber.length);
 
 /**
 * Checking is valid card length by card number and card type ,
@@ -132,8 +130,8 @@ const isValidCard = (cardNumber, type) => cards[type]
 */
 const isValidCardLength = (cardNumber, type) => {
     const valid = false;
-    if (cards[type]
-        && cards[type].lengths.includes(cardNumber?.length)) {
+    if (cardDetails[type]
+        && cardDetails[type].lengths.includes(cardNumber?.length)) {
         return true;
     } if (cardNumber?.length === 16) {
         return true;
@@ -161,10 +159,10 @@ const formatCardNumber = (e, value, position) => {
 };
 
 export {
-    getCardByNumber,
-    isValidCard,
-    getCardByType,
-    getCardImageByCardType,
+    getCardNumberDetails,
+    isValidCardNumber,
+    getCardDetailsByDetails,
+    getCardDefaultImageByDetails,
     isValidCardLength,
     formatCardNumber,
 };
