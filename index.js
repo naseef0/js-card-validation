@@ -136,7 +136,7 @@ const isValidCardLength = (cardNumber) => {
     if (card
       && card.lengths.includes(cardNumber.length)) {
       return true;
-    } if (cardNumber?.length === 16) {
+    } if (cardNumber.length === 16) {
       return true;
     }
   }
